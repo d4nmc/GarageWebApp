@@ -20,11 +20,13 @@ public class Vehicle {
 	private	String	fuel_type;				
 	private	boolean	modified;
 	
+	public Vehicle() {}
 	
 	public Vehicle(Long vehicle_id, String brand, String model, String colour, int bhp,
 			String engineStyle, String regPlate, String fuel_type, boolean modified) {
 		
 		super();
+		
 		this.vehicle_id = vehicle_id;
 		this.brand = brand;
 		this.model = model;

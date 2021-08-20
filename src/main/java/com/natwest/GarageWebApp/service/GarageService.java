@@ -2,6 +2,7 @@ package com.natwest.GarageWebApp.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.natwest.GarageWebApp.database.GarageDatabase;
@@ -12,12 +13,12 @@ public class GarageService {
 
 	private GarageDatabase database;
 	
+	@Autowired
+	
 	public GarageService(GarageDatabase database) {
 		super();
 		this.database = database;
 	}
-
-	
 	
 	public Vehicle createVehicle(Vehicle vehicle) {
 		
@@ -30,29 +31,24 @@ public class GarageService {
 	}
 
 	public Vehicle updateVehicle(Long id, Vehicle vehicle) {
-		
-		Vehicle saveVehicle;
-		
-		Vehicle upVehicle = this.database.getById(id);
+		Vehicle existing = this.database.getById(id);
+		existing.setBrand(vehicle.getBrand());
+		existing.setModel(vehicle.getModel());
+		existing.setColour(vehicle.getColour());
+		existing.setBhp(vehicle.getBhp());
+		existing.setEngineStyle(vehicle.getEngineStyle());
+		existing.setRegPlate(vehicle.getRegPlate());
+		existing.setFuel_type(vehicle.getFuel_type());
+		existing.setModified(vehicle.isModified());
 
-		// Set updated fields
-		upVehicle.setBrand(vehicle.getBrand());
-		upVehicle.setModel(vehicle.getModel());
-		upVehicle.setColour(vehicle.getColour());
-		upVehicle.setBhp(vehicle.getBhp());
-		upVehicle.setEngineStyle(vehicle.getEngineStyle());
-		upVehicle.setRegPlate(vehicle.getRegPlate());
-		upVehicle.setFuel_type(vehicle.getFuel_type());
-		upVehicle.setModified(vehicle.isModified());
-
-		//Save changes to the database
-		saveVehicle = this.database.save(upVehicle);
-		return saveVehicle;
+		Vehicle updated = this.database.save(existing);
+		return updated;
 	}
 
-	public void deleteVehicle(Long id) {
+	public boolean deleteVehicle(Long id) {
 	
 		this.database.deleteById(id);
+		return this.database.existsById(id);
 	}
 
 }
