@@ -16,6 +16,15 @@
     <br>
     <br>
 
+    private Long vehicle_id;	
+	private String 	brand;					
+	private String 	model;					
+	private	String	colour;					
+	private int bhp;				
+	private String	engineStyle;			
+	private String	regPlate;		
+	private	String	fuel_type;				
+	private	boolean	modified;
 
 
     <div class="container">
@@ -24,14 +33,21 @@
         
         <form>
             <div class="mb-3">
-              <label for="nameInput" class="form-label">Name</label>
-              <input type="text" class="form-control" id="nameInput" aria-describedby="name input">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              <label for="brandInput" class="form-label">Vehicle Brand</label>
+              <input type="text" class="form-control" id="brandInput" aria-describedby="brand input">
+              <div id="brandHelp" class="form-text">Please enter the Brand of the Vehicle going into the Garage: </div>
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <label for="modelInput" class="form-label">Vehicle Model</label>
+              <input type="text" class="form-control" id="modelInput" aria-describedby="model input">
+              <div id="brandHelp" class="form-text">Please enter the Model of the Vehicle going into the Garage: </div>
             </div>
+            <div class="mb-3">
+                <label for="colourInput" class="form-label">Colour</label>
+                <input type="text" class="form-control" id="modelInput" aria-describedby="colour input">
+                <div id="colourHelp" class="form-text">Please enter the Colour of the Vehicle going into the Garage: </div>
+              </div>
+
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Check me out</label>
