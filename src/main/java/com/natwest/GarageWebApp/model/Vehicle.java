@@ -12,7 +12,6 @@ public class Vehicle {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long vehicle_id;	
 	
-	private String 	registration_number;	
 	private String 	brand;					
 	private String 	model;					
 	private	String	colour;					
@@ -23,12 +22,11 @@ public class Vehicle {
 	private	boolean	modified;
 	
 	
-	public Vehicle(Long vehicle_id, String registration_number, String brand, String model, String colour, int bhp,
+	public Vehicle(Long vehicle_id, String brand, String model, String colour, int bhp,
 			String engineStyle, String regPlate, String fuel_type, boolean modified) {
 		
 		super();
 		this.vehicle_id = vehicle_id;
-		this.registration_number = registration_number;
 		this.brand = brand;
 		this.model = model;
 		this.colour = colour;
@@ -41,10 +39,9 @@ public class Vehicle {
 		
 	}
 
-	public Vehicle(String registration_number, String brand, String model, String colour, int bhp, String engineStyle,
+	public Vehicle(String brand, String model, String colour, int bhp, String engineStyle,
 			String regPlate, String fuel_type, boolean modified) {
 		super();
-		this.registration_number = registration_number;
 		this.brand = brand;
 		this.model = model;
 		this.colour = colour;
@@ -61,14 +58,6 @@ public class Vehicle {
 
 	public void setVehicle_id(Long vehicle_id) {
 		this.vehicle_id = vehicle_id;
-	}
-
-	public String getRegistration_number() {
-		return registration_number;
-	}
-
-	public void setRegistration_number(String registration_number) {
-		this.registration_number = registration_number;
 	}
 
 	public String getBrand() {

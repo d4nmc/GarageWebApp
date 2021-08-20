@@ -31,7 +31,23 @@ public class GarageService {
 
 	public Vehicle updateVehicle(Long id, Vehicle vehicle) {
 		
-		return null;
+		Vehicle saveVehicle;
+		
+		Vehicle upVehicle = this.database.getById(id);
+
+		// Set updated fields
+		upVehicle.setBrand(vehicle.getBrand());
+		upVehicle.setModel(vehicle.getModel());
+		upVehicle.setColour(vehicle.getColour());
+		upVehicle.setBhp(vehicle.getBhp());
+		upVehicle.setEngineStyle(vehicle.getEngineStyle());
+		upVehicle.setRegPlate(vehicle.getRegPlate());
+		upVehicle.setFuel_type(vehicle.getFuel_type());
+		upVehicle.setModified(vehicle.isModified());
+
+		//Save changes to the database
+		saveVehicle = this.database.save(upVehicle);
+		return saveVehicle;
 	}
 
 	public void deleteVehicle(Long id) {
