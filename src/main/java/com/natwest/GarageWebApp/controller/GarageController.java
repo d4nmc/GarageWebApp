@@ -37,16 +37,20 @@ public class GarageController {
 
 // CREATE
 	@PostMapping("/createVehicle")
-	public ResponseEntity<Vehicle> createVehicle(@RequestBody Vehicle vehicle) {
+	public ResponseEntity<String> createVehicle(@RequestBody Vehicle vehicle) {
 		
-		return new ResponseEntity<Vehicle>(this.service.createVehicle(vehicle), HttpStatus.CREATED);
+		this.service.createVehicle(vehicle);
+		
+		return new ResponseEntity<String>("You have added: " + vehicle.getBrand() + " " + vehicle.getModel() + " to the Garage", HttpStatus.CREATED);
 	}
 
 // READ
 	@GetMapping("/readAllVehicle")
 	public ResponseEntity<List<Vehicle>> readAllVehicle() {
 		
-		return new ResponseEntity<List<Vehicle>>(this.service.readAllVehicle(), HttpStatus.OK);
+		List<Vehicle> vehicleList = this.service.readAllVehicle();
+		
+		return ResponseEntity.ok(vehicleList);
 	}
 
 // UPDATE
@@ -58,9 +62,9 @@ public class GarageController {
 
 // DELETE
 	@DeleteMapping("/deleteVehicle/{id}")
-	public ResponseEntity<Vehicle> deleteVehicle(@PathVariable Long id) {
+	public ResponseEntity<String> deleteVehicle(@PathVariable Long id) {
 		
 		this.service.deleteVehicle(id);
-		return new ResponseEntity<Vehicle>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<String>("Vehicle id: " + id + " has been deleted from the Garage", HttpStatus.ok);
 	}
 }

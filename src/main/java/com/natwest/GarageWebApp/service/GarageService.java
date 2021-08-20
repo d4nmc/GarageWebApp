@@ -20,23 +20,23 @@ public class GarageService {
 	
 	
 	public Vehicle createVehicle(Vehicle vehicle) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return this.database.save(vehicle);
 	}
 
 	public List<Vehicle> readAllVehicle() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return this.database.findAll();
 	}
 
 	public Vehicle updateVehicle(Long id, Vehicle vehicle) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	public void deleteVehicle(Long id) {
-		// TODO Auto-generated method stub
-		
+	
+		this.database.deleteById();
 	}
 
 }
