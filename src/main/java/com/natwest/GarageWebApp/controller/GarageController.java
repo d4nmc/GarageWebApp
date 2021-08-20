@@ -65,6 +65,6 @@ public class GarageController {
 	public ResponseEntity<String> deleteVehicle(@PathVariable Long id) {
 		
 		this.service.deleteVehicle(id);
-		return new ResponseEntity<String>("Vehicle id: " + id + " has been deleted from the Garage", HttpStatus.ok);
+		return new ResponseEntity<String>("Vehicle id: " + id + " has been deleted from the Garage", HttpStatus.OK);
 	}
 }
