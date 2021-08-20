@@ -28,34 +28,38 @@ public class GarageController {
 		super();
 		this.service = service;
 	}
-	// TEST
+	
+// TEST
 	@GetMapping("/hello")
 	public String helloTest() {
 		return "Test complete";
 	}
 
-	// CREATE
+// CREATE
 	@PostMapping("/createVehicle")
 	public ResponseEntity<Vehicle> createVehicle(@RequestBody Vehicle vehicle) {
+		
 		return new ResponseEntity<Vehicle>(this.service.createVehicle(vehicle), HttpStatus.CREATED);
 	}
 
-	// READ
+// READ
 	@GetMapping("/readAllVehicle")
 	public ResponseEntity<List<Vehicle>> readAllVehicle() {
+		
 		return new ResponseEntity<List<Vehicle>>(this.service.readAllVehicle(), HttpStatus.OK);
 	}
 
-	// UPDATE
+// UPDATE
 	@PatchMapping("/updateVehicle/{id}")
 	public ResponseEntity<Vehicle> updateVehicle(@PathVariable Long id, @RequestBody Vehicle vehicle) {
 
 		return new ResponseEntity<Vehicle>(this.service.updateVehicle(id, vehicle), HttpStatus.ACCEPTED);
 	}
 
-	// DELETE
+// DELETE
 	@DeleteMapping("/deleteVehicle/{id}")
 	public ResponseEntity<Vehicle> deleteVehicle(@PathVariable Long id) {
+		
 		this.service.deleteVehicle(id);
 		return new ResponseEntity<Vehicle>(HttpStatus.NO_CONTENT);
 	}
