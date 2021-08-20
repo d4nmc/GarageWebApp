@@ -16,18 +16,7 @@
     <br>
     <br>
 
-    private Long vehicle_id;	
-	private String 	brand;					
-	private String 	model;					
-	private	String	colour;					
-	private int bhp;				
-	private String	engineStyle;			
-	private String	regPlate;		
-	private	String	fuel_type;				
-	private	boolean	modified;
-
-
-    <div class="container">
+     <div class="container">
 
         <h2> Hobby Web Application - My Garage</h2>
         
@@ -44,8 +33,33 @@
             </div>
             <div class="mb-3">
                 <label for="colourInput" class="form-label">Colour</label>
-                <input type="text" class="form-control" id="modelInput" aria-describedby="colour input">
+                <input type="text" class="form-control" id="colourInput" aria-describedby="colour input">
                 <div id="colourHelp" class="form-text">Please enter the Colour of the Vehicle going into the Garage: </div>
+              </div>
+              <div class="mb-3">
+                <label for="bhpInput" class="form-label">BHP Output</label>
+                <input type="text" class="form-control" id="bhpInput" aria-describedby="bhp input">
+                <div id="bhpHelp" class="form-text">Please enter the BHP of the Vehicle going into the Garage: </div>
+              </div>
+              <div class="mb-3">
+                <label for="engineStyleInput" class="form-label">Type of Engine Output</label>
+                <input type="text" class="form-control" id="engineStyleInput" aria-describedby="type of engine input">
+                <div id="engineStyleHelp" class="form-text">Please enter the type of engine the Vehicle going into the Garage has: </div>
+              </div>
+              <div class="mb-3">
+                <label for="registrationPlateInput" class="form-label">Your Vehicles Registration Plate</label>
+                <input type="text" class="form-control" id="registrationPlateInput" aria-describedby="registration plate input">
+                <div id="registrationPlateInputHelp" class="form-text">Please enter the Registration Plate for the Vehicle going into the Garage: </div>
+              </div>
+              <div class="mb-3">
+                <label for="fuel_typeInput" class="form-label">Type of Fuel</label>
+                <input type="text" class="form-control" id="fuel_typeInput" aria-describedby="type of fuel input">
+                <div id="fuel_typeHelp" class="form-text">Please enter the type of fuel the Vehicle going into the Garage uses: </div>
+              </div>
+              <div class="mb-3">
+                <label for="modifiedInput" class="form-label">Modified Vehicle?</label>
+                <input type="text" class="form-control" id="modifiedInput" aria-describedby="modified vehicle input">
+                <div id="modifiedHelp" class="form-text">Is the vehicle going into the garage modified?: </div>
               </div>
 
             <div class="mb-3 form-check">
