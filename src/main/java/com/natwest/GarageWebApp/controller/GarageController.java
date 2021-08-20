@@ -36,14 +36,21 @@ public class GarageController {
 	}
 
 // CREATE
-	@PostMapping("/createVehicle")
-	public ResponseEntity<String> createVehicle(@RequestBody Vehicle vehicle) {
-		
-		this.service.createVehicle(vehicle);
-		
-		return new ResponseEntity<String>("You have added: " + vehicle.getBrand() + " " + vehicle.getModel() + " to the Garage", HttpStatus.CREATED);
-	}
+//	@PostMapping("/createVehicle")
+//	public ResponseEntity<String> createVehicle(@RequestBody Vehicle vehicle) {
+//		
+//		this.service.createVehicle(vehicle);
+//		
+//		return new ResponseEntity<String>("You have added: " + vehicle.getBrand() + " " + vehicle.getModel() + " to the Garage", HttpStatus.CREATED);
+//	}
 
+	@PostMapping("/createVehicle")
+	public ResponseEntity<Vehicle> createVehicle(@RequestBody Vehicle vehicle) {
+		return new ResponseEntity<Vehicle> (this.service.createVehicle(vehicle), 
+				HttpStatus.CREATED);
+
+	}
+	
 // READ
 	@GetMapping("/readAllVehicle")
 	public ResponseEntity<List<Vehicle>> readAllVehicle() {
