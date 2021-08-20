@@ -38,18 +38,18 @@ public class Vehicle {
 		
 	}
 
-	public Vehicle(String brand, String model, String colour, int bhp, String engineStyle,
-			String regPlate, String fuel_type, boolean modified) {
-		super();
-		this.brand = brand;
-		this.model = model;
-		this.colour = colour;
-		this.bhp = bhp;
-		this.engineStyle = engineStyle;
-		this.regPlate = regPlate;
-		this.fuel_type = fuel_type;
-		this.modified = modified;
-	}
+//	public Vehicle(String brand, String model, String colour, int bhp, String engineStyle,
+//			String regPlate, String fuel_type, boolean modified) {
+//		super();
+//		this.brand = brand;
+//		this.model = model;
+//		this.colour = colour;
+//		this.bhp = bhp;
+//		this.engineStyle = engineStyle;
+//		this.regPlate = regPlate;
+//		this.fuel_type = fuel_type;
+//		this.modified = modified;
+//	}
 
 	public Long getVehicle_id() {
 		return vehicle_id;
