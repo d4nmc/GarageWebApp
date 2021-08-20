@@ -16,9 +16,9 @@
     <br>
     <br>
 
-     <div class="container">
-
-        <h2> Hobby Web Application - My Garage</h2>
+     <div class="container" id="createForm">
+<h1> My Garage Web App </h1>
+        <h3> Create and Update Vehicles in Garage </h3>
         
         <form>
             <div class="mb-3">
@@ -74,11 +74,55 @@
                 <div id="idHelp" class="form-text">If updating a Vehicle, please enter the ID here: </div>
               </div>
 
-                   
+              <button type="button" class="btn btn-info btn-lg">Add new Vehicle</button>
+              <button type="button" class="btn btn-warning btn-lg">Update existing Vehicle</button>
+              <button type="button" class="btn btn-danger btn-lg">Delete all Vehicles</button>   
           </form>
 
     </div>
  
+    <br>
+    <br>
+
+    <div class="container" id="deleteForm">
+
+        <h3> Delete a Vehicle </h3>
+        <form>
+             <div class="mb-3">
+                <label for="idInput" class="form-label">ID </label>
+                <input type="text" class="form-control" id="idInput" aria-describedby="id input">
+                <div id="idHelp" class="form-text">Enter the ID of the vehicle you want to delete from Garage: </div>
+              </div>
+
+              <button type="button" class="btn btn-danger btn-lg">Delete Vehicle</button>   
+
+            </form>
+
+    </div>
+
+    <br>
+    <br>
+
+    <div class="container" id="dataContainer">
+        <h3> All Vehicles in Garage </h3>
+
+        <div class="container" id="cardList">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Brand </h5>
+                  <h5 class="card-text">Model </h5>
+                  <h5 class="card-text">Colour </h5>
+                  <h5 class="card-text">BHP </h5>
+                  <h5 class="card-text">Engine Type </h5>
+                  <h5 class="card-text">Registration plate </h5>
+                  <h5 class="card-text">Fuel Type </h5>
+                  <h5 class="card-text">Modified Vehicle </h5>
+                  <h5 class="card-text">ID </h5>
+                                  
+                </div>
+              </div>
+        </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
