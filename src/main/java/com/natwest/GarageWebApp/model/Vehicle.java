@@ -2,13 +2,14 @@ package com.natwest.GarageWebApp.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Vehicle {
 		
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long vehicle_id;	
 	
 	private String 	registration_number;	
