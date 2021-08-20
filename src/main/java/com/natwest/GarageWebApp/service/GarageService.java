@@ -36,7 +36,7 @@ public class GarageService {
 
 	public void deleteVehicle(Long id) {
 	
-		this.database.deleteById();
+		this.database.deleteById(id);
 	}
 
 }
